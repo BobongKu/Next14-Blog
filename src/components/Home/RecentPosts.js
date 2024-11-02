@@ -1,7 +1,7 @@
 import { sortBlogs } from "@/src/utils";
 import Link from "next/link";
 import React from "react";
-import BlogLayoutThree from "../Blog/BlogLayoutThree";
+import BlogLayoutThree from "../Post/PostLayoutThree";
 
 const RecentPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
@@ -12,7 +12,7 @@ const RecentPosts = ({ blogs }) => {
           Recent Posts
         </h2>
         <Link
-          href="/categories/all"
+          href="/posts/all"
           className="inline-block font-medium text-accent dark:text-accentDark underline underline-offset-2      text-base md:text-lg"
         >
           view all

@@ -1,5 +1,5 @@
-import BlogDetails from "@/src/components/Blog/BlogDetails";
-import RenderMdx from "@/src/components/Blog/RenderMdx";
+import BlogDetails from "@/src/components/Post/PostDetails";
+import RenderMdx from "@/src/components/Post/RenderMdx";
 import Tag from "@/src/components/Elements/Tag";
 import siteMetadata from "@/src/utils/siteMetaData";
 import { allBlogs } from "contentlayer/generated";
@@ -99,7 +99,7 @@ export default function BlogPage({ params }) {
         <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Tag
             name={blog.tags[0]}
-            link={`/categories/${slug(blog.tags[0])}`}
+            link={`/posts/${slug(blog.tags[0])}`}
             className="px-6 text-sm py-2"
           />
           <h1
