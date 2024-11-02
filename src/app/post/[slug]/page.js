@@ -115,9 +115,12 @@ export default function BlogPage({ params }) {
           sizes="100vw"
         />
       </div>
-      <PostDetails blog={blog} slug={params.slug} />
-      <div className="gap-y-3 lg:gap-12 sxl:gap-16 mt-8 px-10 xl:px-80 md:px-28 lg:px-40 xs:px-5s">
-        <RenderMdx blog={blog} />
+      
+      <div class="container mx-auto md:w-[800px] px-5 py-8">
+        <PostDetails blog={blog} slug={params.slug} />
+        <div className="">
+         <RenderMdx blog={blog} />
+        </div>
       </div>
     </article>
     </>
