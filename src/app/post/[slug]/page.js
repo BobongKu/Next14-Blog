@@ -1,4 +1,5 @@
-import PostDetails from "@/src/components/Post/PostDetails";
+import Tag from "@/src/components/Elements/Tag";
+import { format, parseISO } from "date-fns";
 import RenderMdx from "@/src/components/Post/RenderMdx";
 import siteMetadata from "@/src/utils/siteMetaData";
 import { allBlogs } from "contentlayer/generated";
@@ -101,6 +102,18 @@ export default function BlogPage({ params }) {
           >
             {blog.title}
           </h1>
+          <h1
+            className="inline-block capitalize text-light text-sm md:text-base"
+          >
+            {format(parseISO(blog.publishedAt), "LLLL d, yyyy")}
+          </h1>
+          <div className="mt-3">
+            <Tag
+              name={blog.tags[0]}
+              link={`/posts/${slug(blog.tags[0])}`}
+              className="px-6 text-sm py-2"
+            />  
+          </div>
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 dark:bg-dark/40" />
         <Image
@@ -115,12 +128,8 @@ export default function BlogPage({ params }) {
           sizes="100vw"
         />
       </div>
-      
-      <div class="container mx-auto md:w-[800px] px-5 py-8">
-        <PostDetails blog={blog} slug={params.slug} />
-        <div className="">
-         <RenderMdx blog={blog} />
-        </div>
+      <div className="container mx-auto md:w-[800px] px-4">
+        <RenderMdx blog={blog} />
       </div>
     </article>
     </>
