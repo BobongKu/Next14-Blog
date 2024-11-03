@@ -11,7 +11,7 @@ const Tag = ({ link = "#", name, ...props }) => {
         props.className
       )}
     >
-      #{name}
+      {name}
     </Link>
   );
 };

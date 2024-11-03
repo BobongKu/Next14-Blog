@@ -56,18 +56,16 @@ const blogs = allBlogs.filter(blog => {
 });
 
   return (
-    <article className="mt-12 flex flex-col text-dark dark:text-light">
-      <div className=" px-5 sm:px-10  md:px-24  sxl:px-32 flex flex-col">
-        <h1 className="mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl">#{params.slug}</h1>
-        <span className="mt-2 inline-block">
-        Discover more categories and posts
-        </span>
+    <article className="mt-12 flex flex-col text-dark dark:text-violet-900">
+      <div className=" px-5 sm:px-10  md:px-24  sxl:px-32 flex flex-col items-center">
+        <h1 className="mt-6 font-semibold text-3xl md:text-4xl lg:text-5xl">{params.slug}</h1>
       </div>
-      <Categories categories={allCategories} currentSlug={params.slug} />
-
-      <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-10 mt-10  px-5 sm:px-10 md:px-24 sxl:px-64">
+      <div className="flex item-center justify-center px-5 sm:px-10 md:px-24 ">
+        <Categories categories={allCategories} currentSlug={params.slug} />
+      </div>
+      <div className="container mx-auto md:w-[800px] px-4">
         {blogs.map((blog, index) => (
-          <article key={index} className="col-span-1 row-span-1 relative">
+          <article key={index} className="col-span-1 row-span-1 relative mt-10">
             <BlogLayoutThree blog={blog} />
           </article>
         ))}
